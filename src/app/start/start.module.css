@@ -1,0 +1,4 @@
+.startContainer {
+  display: flex;
+  outline: 4px solid red;
+}
