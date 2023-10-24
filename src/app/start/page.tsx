@@ -1,12 +1,20 @@
 import React from "react";
 import style from "./start.module.css";
+import { Card, Button } from "react-bootstrap";
 
-export default function Start() {
+type startProps = {
+  onClick: () => void;
+};
+
+export default function Start(props: startProps): JSX.Element {
   return (
-    <div className={style.startContainer}>
-      <header className={style.header}>
-        <h3>This is the start page</h3>
-      </header>
-    </div>
+    <Card className={style.cardContainer}>
+      <Card.Body>
+        <Card.Title>Let&rsquo;s get started!</Card.Title>
+        <Button className={style.button} onClick={props.onClick}>
+          Start
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
