@@ -2,6 +2,7 @@
 
 import style from "./page.module.css";
 import { Card, Button } from "react-bootstrap";
+import Header from "@/components/header/header";
 
 type homeProps = {
   onClick: () => void;
@@ -9,13 +10,16 @@ type homeProps = {
 
 export default function Home(props: homeProps): JSX.Element {
   return (
-    <Card className={style.cardContainer}>
-      <Card.Body>
-        <Card.Title>Let&rsquo;s get started!</Card.Title>
-        <Button className={style.goButton} onClick={props.onClick}>
-          Go!
-        </Button>
-      </Card.Body>
-    </Card>
+    <div className={style.homeContainer}>
+      <Header />
+      <Card className={style.cardContainer}>
+        <Card.Body>
+          <Card.Title>Let&rsquo;s get started!</Card.Title>
+          <Button className={style.goButton} onClick={props.onClick}>
+            Go!
+          </Button>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }

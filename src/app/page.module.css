@@ -1,10 +1,18 @@
+.homeContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  justify-content: center;
+  border: 1px solid red;
+}
+
 .cardContainer {
   display: flex;
   justify-content: center;
   width: 18rem;
   outline: 6px solid black;
   border-radius: 10px;
-  margin-top: 2rem;
+  margin: 2rem;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.5);
 }
