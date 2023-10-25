@@ -1,30 +1,21 @@
 "use client";
 
-import Link from "next/link";
-import styles from "./page.module.css";
-import { API_ROUTES } from "./config/api";
+import style from "./page.module.css";
+import { Card, Button } from "react-bootstrap";
 
-import { useState, useEffect } from "react";
-import { clearStorage } from "./config/clearStorage";
+type homeProps = {
+  onClick: () => void;
+};
 
-export default function Home(): JSX.Element {
-  const [storyState, setStoryState] = useState<string>("");
-  const [editStory, setEditStory] = useState<string>("");
-
-  useEffect(() => {
-    if (location.pathname === "/") {
-      clearStorage();
-    }
-  });
+export default function Home(props: homeProps): JSX.Element {
   return (
-    <div className={styles.pageContainer}>
-      <header className={styles.header}>
-        <h3>This is the home page</h3>
-      </header>
-      <nav className={styles.navigation}>
-        <Link href={API_ROUTES.start}>Start</Link>
-        <Link href={API_ROUTES.food}>Food</Link>
-      </nav>
-    </div>
+    <Card className={style.cardContainer}>
+      <Card.Body>
+        <Card.Title>Let&rsquo;s get started!</Card.Title>
+        <Button className={style.goButton} onClick={props.onClick}>
+          Go!
+        </Button>
+      </Card.Body>
+    </Card>
   );
 }
